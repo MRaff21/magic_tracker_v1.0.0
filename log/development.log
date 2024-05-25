@@ -1,0 +1,404 @@
+Started GET "/" for 127.0.0.1 at 2024-05-24 18:31:05 -0400
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.7ms | Allocations: 383)
+Completed 200 OK in 20ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 7495)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 20:02:30 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.3ms | Allocations: 290)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 1096)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 20:02:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 383)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 4529)
+
+
+Started GET "/cards/123" for 127.0.0.1 at 2024-05-24 20:03:05 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"123"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 10698)
+
+
+  
+NoMethodError (undefined method `encode' for URI:Module
+
+    url = URI("#{SCRYFALL_API_BASE_URL}/cards/named?fuzzy=#{URI.encode(card_name)}")
+                                                               ^^^^^^^):
+  
+app/services/scryfall_service.rb:9:in `fetch_card_data'
+app/controllers/cards_controller.rb:3:in `show'
+Started GET "/" for 127.0.0.1 at 2024-05-24 20:06:28 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | Allocations: 286)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 1089)
+
+
+Started GET "/cards/123" for 127.0.0.1 at 2024-05-24 20:06:32 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"123"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1963)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2052)
+Completed 500 Internal Server Error in 368ms (ActiveRecord: 0.0ms | Allocations: 4633)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass
+
+'.freeze; @output_buffer.append=( image_tag @card_data['image_uris']['normal'] );
+                                                                    ^^^^^^^^^^):
+    3: <h1><%= @card_data['name'] %></h1>
+    4: <p><strong>Type:</strong> <%= @card_data['type_line'] %></p>
+    5: <p><strong>Rarity:</strong> <%= @card_data['rarity'] %></p>
+    6: <%= image_tag @card_data['image_uris']['normal'] %>
+  
+app/views/cards/show.html.erb:6
+app/controllers/cards_controller.rb:4:in `show'
+Started GET "/cards/123" for 127.0.0.1 at 2024-05-24 20:08:40 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"123"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 125.4ms | Allocations: 96676)
+Completed 200 OK in 183ms (Views: 126.9ms | ActiveRecord: 0.0ms | Allocations: 98999)
+
+
+Started GET "/lci/101/" for 127.0.0.1 at 2024-05-24 20:09:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/lci/101"):
+  
+Started GET "/cards/101/" for 127.0.0.1 at 2024-05-24 20:10:02 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1545)
+Completed 200 OK in 436ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3362)
+
+
+Started GET "/cards/101" for 127.0.0.1 at 2024-05-24 20:10:39 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"101"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1373)
+Completed 200 OK in 69ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2928)
+
+
+Started GET "/cards/102" for 127.0.0.1 at 2024-05-24 20:10:47 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"102"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1361)
+Completed 200 OK in 316ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 2654)
+
+
+Started GET "/cards/303" for 127.0.0.1 at 2024-05-24 20:10:54 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"303"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1370)
+Completed 200 OK in 302ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2663)
+
+
+Started GET "/cards/100" for 127.0.0.1 at 2024-05-24 20:10:58 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"100"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1358)
+Completed 200 OK in 224ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2654)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 20:30:40 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 286)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 1084)
+
+
+Started GET "/cards/test_card" for 127.0.0.1 at 2024-05-24 20:30:54 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"test_card"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 16263)
+Completed 200 OK in 2165ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 18803)
+
+
+Started GET "/cards/" for 127.0.0.1 at 2024-05-24 20:31:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/cards"):
+  
+Started GET "/cards/Gishath,%20Sun's%20Avatar" for 127.0.0.1 at 2024-05-24 20:31:21 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Gishath, Sun's Avatar"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1385)
+Completed 200 OK in 61ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 3077)
+
+
+Started GET "/cards/Cancel" for 127.0.0.1 at 2024-05-24 20:31:30 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Cancel"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1368)
+Completed 200 OK in 68ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2926)
+
+
+Started GET "/cards/Dark%20ritual" for 127.0.0.1 at 2024-05-24 20:31:40 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Dark ritual"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1380)
+Completed 200 OK in 88ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2935)
+
+
+Started GET "/cards/Dark%20ritual" for 127.0.0.1 at 2024-05-24 20:33:26 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Dark ritual"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 16244)
+Completed 200 OK in 402ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 18736)
+
+
+Started GET "/cards/Cancel" for 127.0.0.1 at 2024-05-24 20:33:33 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Cancel"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 10)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1363)
+Completed 200 OK in 86ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2985)
+
+
+Started GET "/cards/Edgar%20Markov" for 127.0.0.1 at 2024-05-24 20:33:47 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Edgar Markov"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 1379)
+Completed 200 OK in 133ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 2917)
+
+
+Started GET "/cards/Edgar%20Markov" for 127.0.0.1 at 2024-05-24 20:37:23 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Edgar Markov"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1830)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 1919)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.0ms | Allocations: 4865)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass
+
+<h1>'.freeze; @output_buffer.append=( @card_data['name'] ); @output_buffer.safe_append='</h1>
+                                                ^^^^^^^^):
+    1: <!-- app/views/cards/show.html.erb -->
+    2: 
+    3: <h1><%= @card_data['name'] %></h1>
+    4: <p><strong>Type:</strong> <%= @card_data['type_line'] %></p>
+    5: <p><strong>Rarity:</strong> <%= @card_data['rarity'] %></p>
+  
+app/views/cards/show.html.erb:3
+app/controllers/cards_controller.rb:4:in `show'
+Started GET "/cards/Edgar%20Markov" for 127.0.0.1 at 2024-05-24 20:37:41 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Edgar Markov"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1828)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1917)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms | Allocations: 4798)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass
+
+<h1>'.freeze; @output_buffer.append=( @card_data['name'] ); @output_buffer.safe_append='</h1>
+                                                ^^^^^^^^):
+    1: <!-- app/views/cards/show.html.erb -->
+    2: 
+    3: <h1><%= @card_data['name'] %></h1>
+    4: <p><strong>Type:</strong> <%= @card_data['type_line'] %></p>
+    5: <p><strong>Rarity:</strong> <%= @card_data['rarity'] %></p>
+  
+app/views/cards/show.html.erb:3
+app/controllers/cards_controller.rb:4:in `show'
+Started GET "/cards/Edgar%20Markov" for 127.0.0.1 at 2024-05-24 20:37:45 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Edgar Markov"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1695)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1778)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms | Allocations: 3807)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass
+
+<h1>'.freeze; @output_buffer.append=( @card_data['name'] ); @output_buffer.safe_append='</h1>
+                                                ^^^^^^^^):
+    1: <!-- app/views/cards/show.html.erb -->
+    2: 
+    3: <h1><%= @card_data['name'] %></h1>
+    4: <p><strong>Type:</strong> <%= @card_data['type_line'] %></p>
+    5: <p><strong>Rarity:</strong> <%= @card_data['rarity'] %></p>
+  
+app/views/cards/show.html.erb:3
+app/controllers/cards_controller.rb:4:in `show'
+Started GET "/cards/Cancel" for 127.0.0.1 at 2024-05-24 20:38:06 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Cancel"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1695)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | Allocations: 1778)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms | Allocations: 3639)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass
+
+<h1>'.freeze; @output_buffer.append=( @card_data['name'] ); @output_buffer.safe_append='</h1>
+                                                ^^^^^^^^):
+    1: <!-- app/views/cards/show.html.erb -->
+    2: 
+    3: <h1><%= @card_data['name'] %></h1>
+    4: <p><strong>Type:</strong> <%= @card_data['type_line'] %></p>
+    5: <p><strong>Rarity:</strong> <%= @card_data['rarity'] %></p>
+  
+app/views/cards/show.html.erb:3
+app/controllers/cards_controller.rb:4:in `show'
+Started GET "/cards/Cancel" for 127.0.0.1 at 2024-05-24 20:38:22 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Cancel"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 173)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 16248)
+Completed 200 OK in 82ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 18852)
+
+
+Started GET "/cards/Cancel" for 127.0.0.1 at 2024-05-24 20:42:04 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Cancel"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 16170)
+Completed 200 OK in 84ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 18973)
+
+
+Started GET "/cards/Cancel" for 127.0.0.1 at 2024-05-24 20:42:08 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"Cancel"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 10)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1371)
+Completed 200 OK in 83ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 3268)
+
+
+Started GET "/cards/59e14910-ee2e-49ae-855e-46a8ab6cad82" for 127.0.0.1 at 2024-05-24 20:44:08 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"59e14910-ee2e-49ae-855e-46a8ab6cad82"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1367)
+Completed 200 OK in 198ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 2684)
+
+
+Started GET "/cards/%2259e14910-ee2e-49ae-855e-46a8ab6cad82%22" for 127.0.0.1 at 2024-05-24 20:44:28 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"\"59e14910-ee2e-49ae-855e-46a8ab6cad82\""}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1343)
+Completed 200 OK in 2982ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 2673)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-24 20:53:13 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/manfred/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.1.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 288)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 1090)
+
+
+Started GET "/cards/cancel" for 127.0.0.1 at 2024-05-24 20:53:19 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"cancel"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 16259)
+Completed 200 OK in 125ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 18741)
+
+
+Started GET "/cards/gishath" for 127.0.0.1 at 2024-05-24 20:53:33 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"gishath"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1823)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1906)
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 0.0ms | Allocations: 3323)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass
+
+'.freeze; @output_buffer.append=( image_tag @card_data['image_uris']['png'] );
+                                                                    ^^^^^^^):
+    3: <h1><%= @card_data['name'] %></h1>
+    4: <p><strong>Type:</strong> <%= @card_data['type_line'] %></p>
+    5: <p><strong>Rarity:</strong> <%= @card_data['rarity'] %></p>
+    6: <%= image_tag @card_data['image_uris']['png'] %>
+  
+app/views/cards/show.html.erb:6
+app/controllers/cards_controller.rb:5:in `show'
+Started GET "/cards/gishath-suns-avatar" for 127.0.0.1 at 2024-05-24 20:53:43 -0400
+Processing by CardsController#show as HTML
+  Parameters: {"id"=>"gishath-suns-avatar"}
+  Rendering layout layouts/application.html.erb
+  Rendering cards/show.html.erb within layouts/application
+  Rendered cards/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1377)
+Completed 200 OK in 100ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2939)
+
+

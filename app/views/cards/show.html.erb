@@ -1,0 +1,6 @@
+<!-- app/views/cards/show.html.erb -->
+
+<h1><%= @card_data['name'] %></h1>
+<p><strong>Type:</strong> <%= @card_data['type_line'] %></p>
+<p><strong>Rarity:</strong> <%= @card_data['rarity'] %></p>
+<%= image_tag @card_data['image_uris']['png'] %>
